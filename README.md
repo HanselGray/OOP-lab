@@ -1,4 +1,5 @@
 # OOP-lab
-Lab01: completed 30/04/2023
+Lab01: completed
+Lab02: completed
 
 For oop practicing
