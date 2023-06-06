@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.aims_project;
-import com.mycompany.aims_project.DigitalVideoDisc.DigitalVideoDisc;
+import com.mycompany.aims_project.Media.DigitalVideoDisc;
 
 /**
  *

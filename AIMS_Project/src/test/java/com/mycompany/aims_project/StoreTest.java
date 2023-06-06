@@ -4,7 +4,7 @@
  */
 package com.mycompany.aims_project;
 
-import com.mycompany.aims_project.DigitalVideoDisc.DigitalVideoDisc;
+import com.mycompany.aims_project.Media.DigitalVideoDisc;
 import com.mycompany.aims_project.Store.Store;
 
 /**
