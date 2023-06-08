@@ -4,75 +4,44 @@
  */
 package com.mycompany.aims_project.Media;
 
+import com.mycompany.aims_project.Playable.Playable;
+
 /**
  *
  * @author Gray
  */
-public class DigitalVideoDisc extends Disc {
-   
-    private int id;
-    private String title;
-    private String category;
-    private String director;
-    private int length;
-    private float cost;
+public class DigitalVideoDisc extends Disc implements Playable{
 
     public DigitalVideoDisc() {
         super();
     }
 
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        this.title = title;
-        this.category = category;
-        this.director = director;
-        this.length = length;
-        this.cost = cost;
-        this.id = MediaCtr;
-        ++MediaCtr;
-
-    }
-
-    public DigitalVideoDisc(String title) {
-        this.title = title;
-        this.id = MediaCtr;
-        ++MediaCtr;
+        super(title, category, cost, length, director);
     }
 
     public DigitalVideoDisc(String title, String category, float cost) {
-        this.category = category;
-        this.title = title;
-        this.cost = cost;
-        this.id = MediaCtr;
-        ++MediaCtr;
+        super(title, category, cost);
     }
 
     public DigitalVideoDisc(String title, String category, String director, float cost) {
-        this.director = director;
-        this.category = category;
-        this.title = title;
-        this.cost = cost;
-        this.id = MediaCtr;
-        ++MediaCtr;
+        super(title, category, cost,director);
     }
          
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     @Override
     public String toString() {
-        return "DVD: " + this.title
-                + " - Category: " + this.category
-                + " - Director: " + this.title
-                + " - DVD length: " + this.length
-                + " - Cost: " + this.cost + "$";
+        return "DVD: " + this.getTitle()
+                + " - Category: " + this.getCategory()
+                + " - Director: " + this.getDirector()
+                + " - DVD length: " + this.getLength()
+                + " - Cost: " + this.getCost() + "$";
     }
 
     public boolean isMatch(String title) {
-        return this.title.toLowerCase().contains(title.toLowerCase());
+        return this.getTitle().toLowerCase().contains(title.toLowerCase());
     }
 
+    @Override
     public void play() {
 
         System.out.println("Playing DVD: " + this.getTitle());

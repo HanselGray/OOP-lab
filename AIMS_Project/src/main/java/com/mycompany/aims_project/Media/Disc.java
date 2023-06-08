@@ -9,6 +9,7 @@ package com.mycompany.aims_project.Media;
  * @author Gray
  */
 public class Disc extends Media {
+
     private int length;
     private String director;
 
@@ -16,18 +17,42 @@ public class Disc extends Media {
         super();
     }
 
-    public Disc(int length, String director) {
-        super();
+    public Disc(String title, String category, float cost) {
+        super(title, category, cost);
+    }
+
+    public Disc(String title, String category) {
+        super(title, category);
+    }
+
+    public Disc(String title) {
+        super(title);
+    }
+
+    public Disc(String title, int length, String director) {
+        super(title);
         this.length = length;
         this.director = director;
     }
-    
-    public Disc(int length, String director, int id, String title, String category, float cost) {
-        super(id, title, category, cost);
+
+    public Disc(String title, String category, int length, String director) {
+        super(title, category);
         this.length = length;
         this.director = director;
     }
-    
+
+    public Disc(String title, String category, float cost, int length, String director) {
+        super(title, category, cost);
+        this.length = length;
+        this.director = director;
+    }
+
+    public Disc(String title, String category, float cost, String director) {
+        super(title, category, cost);
+        this.director = director;
+    }
+
+    //getters
     public String getDirector() {
         return director;
     }
@@ -36,5 +61,4 @@ public class Disc extends Media {
         return length;
     }
 
-   
 }

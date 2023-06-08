@@ -4,13 +4,17 @@
  */
 package com.mycompany.aims_project.Media;
 
+import com.mycompany.aims_project.Playable.Playable;
+
 /**
  *
  * @author Gray
  */
-public class Track {
+public class Track implements Playable {
+
     private String title;
     private int length;
+
     public Track() {
     }
 
@@ -18,9 +22,12 @@ public class Track {
         this.title = title;
         this.length = length;
     }
-    
-    
 
+    public Track(String title) {
+        this.title = title;
+    }
+
+    //getters
     public int getLength() {
         return length;
     }
@@ -28,7 +35,11 @@ public class Track {
     public String getTitle() {
         return title;
     }
-    
-    
-    
+
+    //interface
+    @Override
+    public void play() {
+        System.out.println("\"" + this.getTitle() + "\" length: " + this.getLength());
+    }
+
 }

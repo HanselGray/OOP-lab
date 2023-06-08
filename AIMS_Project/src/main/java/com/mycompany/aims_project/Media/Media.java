@@ -8,8 +8,9 @@ package com.mycompany.aims_project.Media;
  *
  * @author Gray
  */
-public class Media {
-    public int MediaCtr = 0;
+public abstract class Media {
+
+    private static int mediactr = 0;
     private int id;
     private String title;
     private String category;
@@ -18,14 +19,28 @@ public class Media {
     public Media() {
     }
 
-    public Media(int id, String title, String category, float cost) {
-        this.id = id;
+    public Media(String title) {
+        ++mediactr;
+        this.id = mediactr;
+        this.title = title;
+    }
+
+    public Media(String title, String category) {
+        ++mediactr;
+        this.id = mediactr;
+        this.title = title;
+        this.category = category;
+    }
+
+    public Media(String title, String category, float cost) {
+        ++mediactr;
+        this.id = mediactr;
         this.title = title;
         this.category = category;
         this.cost = cost;
     }
-    
 
+    //getters
     public int getId() {
         return id;
     }
@@ -41,7 +56,18 @@ public class Media {
     public float getCost() {
         return cost;
     }
-    
-    
-     
+
+    //setters
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
 }

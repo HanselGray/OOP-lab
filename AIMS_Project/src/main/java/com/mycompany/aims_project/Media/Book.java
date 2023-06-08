@@ -12,10 +12,21 @@ import java.util.ArrayList;
  */
 public class Book extends Media{
     private ArrayList<String> authors = new ArrayList<>();
-    public int book_num_counter = 0;
     
     public Book(){
         super();
+    }
+    
+    public Book(String title){
+        super(title);
+    }
+    
+    public Book(String title, String category){
+        super(title, category);
+    }
+    
+    public Book(String title, String category, float cost){
+        super(title, category, cost);       
     }
     
     private void addAuthor(String AuthorName){
