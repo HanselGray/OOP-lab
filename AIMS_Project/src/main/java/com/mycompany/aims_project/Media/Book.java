@@ -10,42 +10,44 @@ import java.util.ArrayList;
  *
  * @author Gray
  */
-public class Book extends Media{
+public class Book extends Media {
+
     private ArrayList<String> authors = new ArrayList<>();
-    
-    public Book(){
+
+    public Book() {
         super();
     }
-    
-    public Book(String title){
+
+    public Book(String title) {
         super(title);
     }
-    
-    public Book(String title, String category){
+
+    public Book(String title, String category) {
         super(title, category);
     }
-    
-    public Book(String title, String category, float cost){
-        super(title, category, cost);       
+
+    public Book(String title, String category, float cost) {
+        super(title, category, cost);
     }
-    
-    private void addAuthor(String AuthorName){
-        if(!this.authors.contains(AuthorName)){
+
+    public void addAuthor(String AuthorName) {
+        if (!this.authors.contains(AuthorName)) {
             this.authors.add(AuthorName);
         }
     }
-    
-     private void removeAuthor(String AuthorName){
-        if(this.authors.contains(AuthorName)){
+
+    public void removeAuthor(String AuthorName) {
+        if (this.authors.contains(AuthorName)) {
             this.authors.remove(AuthorName);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Book: "+this.getTitle()+" - Category: "+this.getCategory()+" - Price: "+this.getCost();
+                
+    }
     
     
-    
-    
-    
-    
-    
-    
+
 }

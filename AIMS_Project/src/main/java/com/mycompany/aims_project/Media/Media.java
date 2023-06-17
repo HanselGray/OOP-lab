@@ -4,11 +4,18 @@
  */
 package com.mycompany.aims_project.Media;
 
+import java.util.Comparator;
+import java.util.Objects;
+import com.mycompany.aims_project.Comparator.MediaComparatorByCostTitle;
+import com.mycompany.aims_project.Comparator.MediaComparatorByTittleCost;
 /**
  *
  * @author Gray
  */
 public abstract class Media {
+    
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTittleCost();
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
 
     private static int mediactr = 0;
     private int id;
@@ -70,4 +77,24 @@ public abstract class Media {
         this.category = category;
     }
 
+    //equals
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (o instanceof Media tmp) {
+            return tmp.title.equals(this.title);
+        } else {
+            return false;
+        }
+
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 47 * hash + Objects.hashCode(this.title);
+        return hash;
+    }
 }

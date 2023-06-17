@@ -12,46 +12,49 @@ import com.mycompany.aims_project.Playable.Playable;
  * @author Gray
  */
 public class CompactDisc extends Disc implements Playable {
-    
+
     private String artist;
-    private ArrayList<Track> tracks;
-    
+    private ArrayList<Track> tracks = new ArrayList<>();
+
     public CompactDisc() {
         super();
+
     }
-    
+
     public CompactDisc(String title, String artist) {
         super(title);
         this.artist = artist;
-        
+
     }
-    
+
     public CompactDisc(String title, String category, String artist) {
         super(title, category);
         this.artist = artist;
-        this.tracks = new ArrayList<>();
+
     }
-    
-    public CompactDisc(String title, String category, float cost, String aritst) {
+
+    public CompactDisc(String title, String category, String aritst, float cost) {
         super(title, category, cost);
-        this.tracks = new ArrayList<>();
         this.artist = aritst;
     }
-    
-    private void addTrack(Track newTrack) {
+
+    public void addTrack(Track newTrack) {
         if (!this.tracks.contains(newTrack)) {
             this.tracks.add(newTrack);
         }
     }
-    
-    private void removeTrack(Track rmvble) {
+
+    public void removeTrack(Track rmvble) {
         if (this.tracks.contains(rmvble)) {
             this.tracks.remove(rmvble);
         }
     }
-    
+
     @Override
     public int getLength() {
+        if (tracks.isEmpty()) {
+            return 0;
+        }
         int temp = 0;
         for (int i = 0; i < tracks.size(); ++i) {
             temp += tracks.get(i).getLength();
@@ -64,16 +67,25 @@ public class CompactDisc extends Disc implements Playable {
         return artist;
     }
 
+    //toString
+    @Override
+    public String toString() {
+        return "CD: " + this.getTitle()
+                + " - Produced by: " + getArtist()
+                + " - Duration: " + this.getLength()
+                + " - Price: " + this.getCost();
+    }
+
     //interface
     @Override
     public void play() {
-        
-        System.out.println("You are now listening to \"" + this.getTitle() + "\" \n Produced by " + this.getArtist());
-        
+
+        System.out.println("You are now listening to \"" + this.getTitle() + "\" \nProduced by: " + this.getArtist());
+
         for (int i = 0; i < tracks.size(); ++i) {
             System.out.print("Track no." + i + ":");
             tracks.get(i).play();
         }
     }
-    
+
 }

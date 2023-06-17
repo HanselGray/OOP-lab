@@ -5,6 +5,7 @@
 package com.mycompany.aims_project.Media;
 
 import com.mycompany.aims_project.Playable.Playable;
+import java.util.Objects;
 
 /**
  *
@@ -40,6 +41,25 @@ public class Track implements Playable {
     @Override
     public void play() {
         System.out.println("\"" + this.getTitle() + "\" length: " + this.getLength());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (o instanceof Track tmp) {
+            return tmp.length == this.length && tmp.title.equals(this.title);
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 23 * hash + Objects.hashCode(this.title);
+        return hash;
     }
 
 }
