@@ -4,7 +4,7 @@
  */
 package com.mycompany.aims_project.Store;
 
-import com.mycompany.aims_project.DigitalVideoDisc.DigitalVideoDisc;
+import com.mycompany.aims_project.Media.Media;
 import java.util.ArrayList;
 
 /**
@@ -12,23 +12,39 @@ import java.util.ArrayList;
  * @author Gray
  */
 public class Store {
-    private ArrayList<DigitalVideoDisc> itemsInStore = new ArrayList<>();
+
+    private ArrayList<Media> itemsInStore = new ArrayList<>();
+
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }   
     
-    public void addDVD(DigitalVideoDisc dvd){
-        itemsInStore.add(dvd);
+    public void addMedia(Media media) {
+        itemsInStore.add(media);
     }
-    
-    public void removeDVD(DigitalVideoDisc dvd){
-        itemsInStore.remove(dvd);
+
+    public void removeMedia(Media media) {
+        itemsInStore.remove(media);
     }
-    
-    public void print(){
-        System.out.println("***********************************DVD LIST***********************************");
-        for(int i=0;i<itemsInStore.size();++i){
-            System.out.println(1+i + "." + itemsInStore.get(i));
+
+    public void print() {
+        System.out.println("***********************************MEDIA LIST***********************************");
+        for (int i = 0; i < itemsInStore.size(); ++i) {
+            System.out.println(1 + i + "." + itemsInStore.get(i));
         }
         System.out.println("***********************************  END   ***********************************");
-        
+
         System.out.print("\n\n");
     }
+
+    public Media search(String title) {
+        for (Media media : itemsInStore) {
+            if (media.getTitle().equals(title)) {
+                return media;
+            }
+        }
+        return null;
+    }
+    
+    
 }
