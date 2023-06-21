@@ -3,7 +3,7 @@ Lab01: completed
 
 Lab02: completed
 
-Lab03(/HanselGray/OOP-lab/tree/release/Lab003): completed
+[Lab03](/HanselGray/OOP-lab/tree/release/Lab003): completed
 
 Lab04: completed 
 
