@@ -15,8 +15,7 @@ Suppose we are taking this Comparable interface approach.
         }
         
         return comp;
-}
-```
+	}
 
 - Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?  
     No we cannot. The Comparable interface assumes that there is only one natural ordering for the objects being compared.
