@@ -10,4 +10,4 @@ Lab02: completed
 For oop practicing
 Works for lab_01 and lab_02 can be found under Other projects directory
 
-**ANSWER FOR THIS LAB CAN BE FOUND UNDER >answers.md **
+**ANSWER FOR THIS LAB CAN BE FOUND UNDER** >answers.md
